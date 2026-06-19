@@ -1,14 +1,16 @@
 import os
 
+import os
+
+BASE_DIR = 'workspace'
+
 def list_workspace():
-    """Lists all files in the current folder."""
-    try:
-        files = [f for f in os.listdir('.') if not f.startswith('.') and not f.startswith('__')]
-        if not files:
-            return "The workspace directory is currently empty."
-        return "\n".join(files)
-    except Exception as e:
-        return f"Error scanning directory: {str(e)}"
+    if not os.path.exists(BASE_DIR):
+        os.makedirs(BASE_DIR)
+    files = [f for f in os.listdir(BASE_DIR)]
+    return "\n".join(files) if files else "Workspace is empty."
+
+
 
 def read_target_file(filepath):
     """Reads the contents of a local file."""
