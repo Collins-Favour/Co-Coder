@@ -1,0 +1,22 @@
+# --- Python Specific ---
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+env/
+.env
+
+# --- Security/API Keys ---
+# This is the most important line!
+config.py
+
+# --- IDE/Environment Files ---
+.vscode/
+.idea/
+.DS_Store
+
+# --- Workspace (Safe Sandboxing) ---
+# We keep the workspace folder, but ignore its contents
+# so that test files or garbage don't get pushed to the repo
+workspace/*
+!workspace/.keep
